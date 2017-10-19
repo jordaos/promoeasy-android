@@ -5,6 +5,7 @@ import android.app.FragmentManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
@@ -19,11 +20,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jordao.promoeasy.contract.HomeContract;
 import com.jordao.promoeasy.fragments.HomeFragment;
+import com.jordao.promoeasy.model.ImageSaver;
 import com.jordao.promoeasy.model.entity.User;
 import com.jordao.promoeasy.presenter.HomePresenter;
 
@@ -74,9 +77,17 @@ public class HomeActivity extends AppCompatActivity
 
         TextView name = (TextView) findViewById(R.id.nameTextView);
         TextView userName = (TextView) findViewById(R.id.userNameTextView);
+        ImageView imageView = (ImageView) findViewById(R.id.userImageView);
 
         name.setText(user.getName());
         userName.setText("@" + user.getUserName());
+
+        Bitmap bitmap = new ImageSaver(getApplicationContext()).
+                setFileName(user.getId() + ".jpg").
+                setDirectoryName("images").
+                load();
+
+        imageView.setImageBitmap(bitmap);
     }
 
     @Override
@@ -134,7 +145,7 @@ public class HomeActivity extends AppCompatActivity
         Fragment fragment = null;
         Class fragmentClass = null;
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_sorteios) {
             fm.beginTransaction().replace(R.id.app_content, new HomeFragment()).commit();
         } else if (id == R.id.nav_gallery) {
 

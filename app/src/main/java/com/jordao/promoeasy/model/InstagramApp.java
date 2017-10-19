@@ -155,6 +155,13 @@ public class InstagramApp {
                             "username");
                     String name = jsonObj.getJSONObject("user").getString(
                             "full_name");
+                    String profilePictureURL = jsonObj.getJSONObject("user").getString("profile_picture");
+                    String imageName = id + ".jpg";
+
+                    new ImageSaver(mCtx).
+                            setFileName(imageName).
+                            setDirectoryName("images").
+                            download(profilePictureURL);
 
                     User user = new User(id, name, username, mAccessToken);
                     repository.storeUser(user);
