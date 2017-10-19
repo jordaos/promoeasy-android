@@ -19,11 +19,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jordao.promoeasy.contract.HomeContract;
 import com.jordao.promoeasy.fragments.HomeFragment;
+import com.jordao.promoeasy.model.entity.User;
 import com.jordao.promoeasy.presenter.HomePresenter;
+
+import org.w3c.dom.Text;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
@@ -65,6 +69,16 @@ public class HomeActivity extends AppCompatActivity
         fm.beginTransaction().replace(R.id.app_content, new HomeFragment()).commit();
     }
 
+    private void initViews(){
+        User user = presenter.getUser();
+
+        TextView name = (TextView) findViewById(R.id.nameTextView);
+        TextView userName = (TextView) findViewById(R.id.userNameTextView);
+
+        name.setText(user.getName());
+        userName.setText("@" + user.getUserName());
+    }
+
     @Override
     public void onBackPressed() {
         if (backPressedToExitOnce) {
@@ -88,6 +102,9 @@ public class HomeActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.home, menu);
+
+        initViews();
+
         return true;
     }
 
@@ -110,7 +127,6 @@ public class HomeActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         FragmentManager fm = getFragmentManager();
-        android.support.v4.app.FragmentManager sFm = getSupportFragmentManager();
 
         // Handle navigation view item clicks here.
         int id = item.getItemId();

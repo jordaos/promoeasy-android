@@ -22,6 +22,11 @@ public class HomePresenter implements HomeContract.Presenter{
 
 
     @Override
+    public User getUser() {
+        return instagramApp.getUser();
+    }
+
+    @Override
     public void logout() {
         instagramApp.resetUser();
     }
