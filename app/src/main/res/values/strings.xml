@@ -6,4 +6,12 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="chbx_like_photo">Curtir a foto oficial</string>
+    <string name="chbx_tag_friends">Marcar três amigos</string>
+    <string name="chbx_follow_profiles">Seguir o(s) perfil(is)</string>
+    <string name="chbx_be_follower">Não aceitar novos seguidores</string>
 </resources>

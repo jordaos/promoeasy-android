@@ -1,10 +1,7 @@
 package com.jordao.promoeasy.presenter;
 
-import android.util.Log;
-import android.widget.Toast;
-
 import com.jordao.promoeasy.contract.MainContract;
-import com.jordao.promoeasy.model.ApplicationData;
+import com.jordao.promoeasy.model.instagram.ApplicationData;
 import com.jordao.promoeasy.model.InstagramApp;
 
 /**

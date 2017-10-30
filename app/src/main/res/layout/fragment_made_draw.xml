@@ -1,0 +1,109 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.jordao.promoeasy.fragments.MadeDrawFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Requisitos de participação"
+        android:textAlignment="center"
+        android:textSize="19dp"
+        android:textStyle="bold" />
+
+    <CheckBox android:id="@+id/checkbox_like_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/chbx_like_photo"/>
+
+    <CheckBox android:id="@+id/checkbox_follow_profiles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/chbx_follow_profiles"/>
+
+    <LinearLayout
+        android:id="@+id/followProfilesLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Perfil 1:" />
+
+        <EditText
+            android:id="@+id/follow1TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="\@username"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Perfil 2:" />
+
+        <EditText
+            android:id="@+id/follow2TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="\@username"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Perfil 3:" />
+
+        <EditText
+            android:id="@+id/follow3TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="\@username"
+            android:inputType="textPersonName" />
+    </LinearLayout>
+
+    <CheckBox android:id="@+id/checkbox_tag_friends"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/chbx_tag_friends"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <CheckBox android:id="@+id/checkbox_be_follower"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chbx_be_follower"
+            android:layout_alignParentLeft="true"/>
+
+        <Button
+            android:id="@+id/help_be_follower"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/ic_help_circle_black_48dp"
+            android:layout_marginRight="10dp"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/msg_help_be_follower"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:background="@color/bgThing"
+        android:textAlignment="center"
+        android:text="Só poderão participar dessa promoção os usuários que seguirem seu perfil a pelo menos uma semana."/>
+
+</LinearLayout>

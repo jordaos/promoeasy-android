@@ -1,7 +1,7 @@
 package com.jordao.promoeasy.presenter;
 
 import com.jordao.promoeasy.contract.HomeContract;
-import com.jordao.promoeasy.model.ApplicationData;
+import com.jordao.promoeasy.model.instagram.ApplicationData;
 import com.jordao.promoeasy.model.InstagramApp;
 import com.jordao.promoeasy.model.entity.User;
 

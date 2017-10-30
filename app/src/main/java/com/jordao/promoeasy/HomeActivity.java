@@ -26,11 +26,10 @@ import android.widget.Toast;
 
 import com.jordao.promoeasy.contract.HomeContract;
 import com.jordao.promoeasy.fragments.HomeFragment;
-import com.jordao.promoeasy.model.ImageSaver;
+import com.jordao.promoeasy.fragments.MadeDrawFragment;
+import com.jordao.promoeasy.repository.ImageSaver;
 import com.jordao.promoeasy.model.entity.User;
 import com.jordao.promoeasy.presenter.HomePresenter;
-
-import org.w3c.dom.Text;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
@@ -81,13 +80,7 @@ public class HomeActivity extends AppCompatActivity
 
         name.setText(user.getName());
         userName.setText("@" + user.getUserName());
-
-        Bitmap bitmap = new ImageSaver(getApplicationContext()).
-                setFileName(user.getId() + ".jpg").
-                setDirectoryName("images").
-                load();
-
-        imageView.setImageBitmap(bitmap);
+        imageView.setImageBitmap(user.getProfileImage());
     }
 
     @Override
@@ -147,6 +140,8 @@ public class HomeActivity extends AppCompatActivity
 
         if (id == R.id.nav_sorteios) {
             fm.beginTransaction().replace(R.id.app_content, new HomeFragment()).commit();
+        } else if (id == R.id.nav_new_draw) {
+            fm.beginTransaction().replace(R.id.app_content, new MadeDrawFragment()).commit();
         } else if (id == R.id.logout) {
             DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
                 @Override

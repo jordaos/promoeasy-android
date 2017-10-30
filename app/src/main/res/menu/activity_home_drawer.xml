@@ -4,30 +4,21 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_sorteios"
-            android:icon="@drawable/ic_shuffle"
+            android:icon="@drawable/ic_file_document_box_black_48dp"
             android:title="Sorteios" />
         <item
             android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Estou participando" />
+            android:icon="@drawable/ic_emoticon_black_48dp"
+            android:title="Participando" />
+        <item
+            android:id="@+id/nav_new_draw"
+            android:icon="@drawable/ic_hospital_black_48dp"
+            android:title="Novo sorteio" />
     </group>
-
-    <!--<item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
-        </menu>
-    </item>-->
 
     <item
         android:id="@+id/logout"
-        android:icon="@drawable/ic_logout"
+        android:icon="@drawable/ic_logout_black_48dp"
         android:title="Sair" />
 
 </menu>
